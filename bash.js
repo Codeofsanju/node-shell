@@ -1,4 +1,5 @@
 const pwd=require('./pwd');
+const ls=require('./ls');
 
 function bash(){
     process.stdout.write('prompt > ');
@@ -7,8 +8,7 @@ function bash(){
         // process.stdout.write('You typed: ' + cmd);
         cmd = cmd.toLowerCase();
         if(cmd === 'ls'){
-            lsHelper(process);
-            
+            ls();    
         }
         else if(cmd === 'pwd'){
             console.log(pwd(process));
