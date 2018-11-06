@@ -1,3 +1,5 @@
+const pwd=require('./pwd');
+
 function bash(){
     process.stdout.write('prompt > ');
     process.stdin.on('data', (data) =>{
@@ -5,10 +7,11 @@ function bash(){
         // process.stdout.write('You typed: ' + cmd);
         cmd = cmd.toLowerCase();
         if(cmd === 'ls'){
-            lsHelper();
+            lsHelper(process);
+            
         }
         else if(cmd === 'pwd'){
-            console.log(pwdHelper(process));
+            console.log(pwd(process));
         }
         else if(cmd === 'kill' || cmd === 'exit'){
             process.exit();
@@ -19,13 +22,12 @@ function bash(){
 
 } 
 
-function lsHelper() {
-    console.log(process);
+function lsHelper(process) {
+    //console.log(process);
+    console.log('mainModule.path:',mainModule.path);
 }
 
-function pwdHelper(process){
-    return process.mainModule.filename;
-}
+
 
 console.log(bash());
 
