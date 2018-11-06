@@ -22,10 +22,10 @@ function bash(){
 
 } 
 
-function lsHelper(process) {
-    //console.log(process);
-    console.log('mainModule.path:',mainModule.path);
-}
+// function lsHelper(process) {
+//     //console.log(process);
+//     console.log('mainModule.path:',mainModule.path);
+// }
 
 
 
